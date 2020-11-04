@@ -1,0 +1,20 @@
+{
+  "name": "happybirthdayapp",
+  "version": "1.0.0",
+  "description": "'for loners or to greet someone'",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "pretest": "eslint --ignore-path .gitignore .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "author": "Adwait Narayan Pradhan",
+  "license": "ISC"
+}
