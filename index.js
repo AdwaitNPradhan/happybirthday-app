@@ -1,6 +1,7 @@
 // jshint esversion: 6
 const express = require("express");
 const { response } = require("express");
+const hbs = require("hbs");
 const fs = require("fs");
 var app = express(); //creating a pp object for express framework
 

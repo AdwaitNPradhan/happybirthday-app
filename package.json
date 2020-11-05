@@ -7,7 +7,9 @@
         "test": "test"
     },
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.0",
+        "hbs": "^4.1.1"
     },
     "devDependencies": {},
     "scripts": {
