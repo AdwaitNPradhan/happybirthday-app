@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./favicon.ico" type="image/icon type">
+
+    <title>Happy Birthday {{vname}}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Itim', monospace;
+            background-size: 100% 100%;
+            background-color: #ffff22;
+            color: #ff0022;
+            font-size: 20px;
+        }
+        
+        .board {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+            background-color: rgba(125, 255, 325, 0.38);
+            width: 60%;
+            height: 20rem;
+            border-radius: 0.45rem;
+            transform: scaleY(1);
+            box-shadow: 0px 0px 4px #33ffff;
+        }
+        
+        .partyBalloons {
+            height: 100vh;
+            background: linear-gradient(#008ba0 7%, #008ba0 7%, #c5cfcf 90%);
+        }
+        
+        .partyBalloons img {
+            position: absolute;
+            width: 80px;
+            height: 110px;
+        }
+        
+        .partyBalloons img:nth-child(1) {
+            top: 52%;
+            left: 26%;
+            animation: animate 10s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(2) {
+            top: 25%;
+            left: 18%;
+            animation: animate 12s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(3) {
+            top: 15%;
+            left: 73%;
+            animation: animate 10s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(4) {
+            top: 80%;
+            left: 80%;
+            animation: animate 6s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(5) {
+            top: 10%;
+            left: 30%;
+            animation: animate 16s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(6) {
+            top: 70%;
+            left: 42%;
+            animation: animate 8s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(7) {
+            top: 75%;
+            left: 5%;
+            animation: animate 9s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(8) {
+            top: 10%;
+            left: 53%;
+            animation: animate 11s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(9) {
+            top: 5%;
+            left: 5%;
+            animation: animate 14s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(10) {
+            top: 42%;
+            left: 80%;
+            animation: animate 13s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(11) {
+            top: 53%;
+            left: 93%;
+            animation: animate 7s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(12) {
+            top: 45%;
+            left: 60%;
+            animation: animate 9s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(13) {
+            top: 80%;
+            left: 58%;
+            animation: animate 7s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(14) {
+            top: 43%;
+            left: 6%;
+            animation: animate 7s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(15) {
+            top: 35%;
+            left: 40%;
+            animation: animate 11s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(16) {
+            top: 82%;
+            left: 20%;
+            animation: animate 11s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(17) {
+            top: 10%;
+            left: 90%;
+            animation: animate 6s linear infinite;
+        }
+        
+        .partyBalloons img:nth-child(2n+1) {
+            width: 50px;
+            height: 65px;
+        }
+        
+        .partyBalloons img:nth-child(4n+2) {
+            width: 20px;
+            height: 30px;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-200px);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            span {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="partyBalloons ">
+        <img src="./images/image-01.png " alt=" balloons ">
+        <img src="./images/image-02.png " alt=" balloons ">
+        <img src="./images/image-03.png " alt=" balloons ">
+        <img src="./images/image-04.png " alt=" balloons ">
+        <img src="./images/image-06.png " alt=" balloons ">
+        <img src="./images/image-05.png " alt=" balloons ">
+        <img src="./images/image-07.png " alt=" balloons ">
+        <img src="./images/image-08.png " alt=" balloons ">
+        <img src="./images/image-09.png " alt=" balloons ">
+        <img src="./images/image-10.png " alt=" balloons ">
+        <img src="./images/image-11.png " alt=" balloons ">
+        <img src="./images/image-12.png " alt=" balloons ">
+        <img src="./images/image-13.png " alt=" balloons ">
+        <img src="./images/image-14.png " alt=" balloons ">
+        <img src="./images/image-15.png " alt=" balloons ">
+        <img src="./images/image-16.png " alt=" balloons ">
+        <img src="./images/image-17.png " alt=" balloons ">
+    </div>
+
+    <div class=" board ">
+
+        <div class=" head ">
+            <span>Happy Birthday Dear {{vname}}</span>
+        </div>
+
+        <div class=" body ">
+            <span>Test Body</span>
+        </div>
+
+        <div class=" foot ">
+            <span>Test foot</span>
+
+        </div>
+
+    </div>
+    <audio src="./music/happybirthday.mp3"></audio>
+    <script>
+        var audio = new Audio('./music/happybirthday.mp3');
+        audio.play();
+    </script>
+</body>
+
+</html>

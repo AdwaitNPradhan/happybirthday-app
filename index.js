@@ -1,34 +1,56 @@
-const express = require('express');
-var http = require('http');
-var url = require('url');
-const path = require('path');
-const fs = require('fs');
+// jshint esversion: 6
+const express = require("express");
+const { response } = require("express");
+const hbs = require("hbs");
+const fs = require("fs");
+var app = express(); //creating a pp object for express framework
 
-const pubPath = path.join(__dirname, 'public');
-const port = process.env.PORT || 3000;
 
-var app = express();
+app.set("view engine", "hbs");
+const port = process.env.PORT || 3000; //auto configuring the port to listen on
+app.use(express.static('./views/res'));
+app.use((request, response, next) => {
+    //logging function for all the connections or requests made
 
-app.use(express.static(pubPath));
+    var now = new Date().toISOString().slice(0, 10);
 
-app.get('/', (request, response) => {
+    var pURL = request.originalUrl;
+    if (pURL != "/favicon.ico" && pURL.startsWith("/name=")) {
+        var name = pURL.split("=")[1];
+        var log = `On :${now}: Birthday greet request for [${name}] | urlADD: {${request.url}}`; //log scheme
 
-    response.send("connected<br>use\name={name}");
-
+        console.log(log);
+        fs.appendFile("server.log", log + "\n", (err) => {
+            if (err) {
+                console.log("Unable to append to server logs!");
+            }
+        });
+    }
+    next();
 });
-app.get('/name=*', function(req, res) {
-    var pURL = req.originalUrl;
-    pURL = pURL.split('=')[1];
-    res.send("requested Name: " + pURL);
-    // console.log(req.originalUrl);
+
+app.get("/", (request, response) => {
+    response.send("connected<br>use\\name={name}");
 });
-app.get('*', function(req, res) {
+app.get("/name=*", function(req, res) {
+    var pURL = req.originalUrl; //getting the url of the current request made
+    var name = pURL.split("=")[1]; //looking for /name=yourname
+    name = name.replace(/%20/g, ' ');
+
+    res.render("greet.hbs", {
+        //rendering the hbs file and passing var name for placeholder replacement
+        vname: name
+    });
+
+
+    console.log("requested Name: " + name);
+});
+app.get("*", function(req, res) {
+    //if the url is not what the app intended to get
     res.send("not found");
-    // console.log(req.originalUrl);
-
+    console.log(req.originalUrl);
 });
-
 
 app.listen(port, () => {
-    // console.log('listening...');
+    console.log("listening...");
 });
